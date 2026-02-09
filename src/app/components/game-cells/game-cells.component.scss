@@ -1,0 +1,40 @@
+.grid {
+  display: grid;
+  gap: 8px;
+  width: auto;
+  margin: 0 5px;
+  grid-template-columns: repeat(10, minmax(10px, 50px));
+  padding: 20px;
+}
+
+.cell {
+  background-color: #007bff;
+  border-radius: 5px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  &.default {
+    background-color: #007bff;
+  }
+
+  &.active {
+    background-color: #f1ea24;
+  }
+
+  &.error {
+    background-color: #e57373;
+  }
+
+  &.success {
+    background-color: #81c784;
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .grid { gap: 6px; }
+}

@@ -1,0 +1,27 @@
+<div class="table-container">
+  <table class="results-table">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th [ngClass]="(coreSummary$ | async)?.winner === 'player' ? 'winner' : ''">
+          Player Score
+        </th>
+        <th [ngClass]="(coreSummary$ | async)?.winner === 'cpu' ? 'winner' : ''">
+          CPU Score {{ (coreSummary$ | async)?.winner}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of (results$ | async); let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ result.playerScore }}</td>
+        <td>{{ result.cpuScore }}</td>
+      </tr>
+      <tr class="total-row">
+        <td>Total</td>
+        <td>{{ (coreSummary$ | async)?.player }}</td>
+        <td>{{ (coreSummary$ | async)?.cpu }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

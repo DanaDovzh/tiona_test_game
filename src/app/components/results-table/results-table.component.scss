@@ -1,0 +1,70 @@
+.results-table {
+  border-collapse: collapse;
+  font-family: inherit;
+  margin: 0;
+
+  thead {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ccc;
+  }
+}
+
+.results-table th,
+.results-table td {
+  padding: 6px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+
+.results-table th {
+  color: #333;
+}
+
+.results-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.total-row {
+  background-color: #e8f5e9;
+  border-top: 2px solid #4caf50;
+  font-weight: 600;
+
+  td {
+    color: #2e7d32;
+  }
+}
+
+.winner {
+  background-color: #fff9c4;
+  color: #f57f17;
+  font-weight: 700;
+  position: relative;
+  padding-top: 28px;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 94%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('/assets/crown.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    animation: crown-float 2s ease-in-out infinite;
+  }
+}
+
+@keyframes crown-float {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-3px) rotate(45deg);
+  }
+}
