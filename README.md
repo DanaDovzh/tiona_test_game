@@ -43,28 +43,11 @@ ng serve
 
 After the server starts, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any source files.
 
-
-## Commands
-
-### Development
-
-```bash
-npm start        # Start development server (http://localhost:4200)
-```
-
-### GitHub Pages
+## GitHub Pages
 
 ```bash
 npm run github-build    # Build for GitHub Pages
 npm run github-deploy   # Deploy to GitHub Pages
-```
-
-## Building
-
-To build the project, run:
-
-```bash
-npm run build
 ```
 
 ## Tech Stack
