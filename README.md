@@ -1,59 +1,88 @@
 # TionaTestGame
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+A reaction time testing game. This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
 
-## Development server
+## About the Project
 
-To start a local development server, run:
+**TionaTestGame** is an interactive web-based game built with Angular that tests a player's reaction speed. The game tracks results and saves them to your browser's local storage.
+
+### Key Features:
+- 🎮 Interactive game to test reaction speed
+- 📊 Results table with game history
+- 🕐 Customizable game interval
+- 💾 Automatic result storage in local browser storage
+- 🎨 UI built with Angular Material
+
+
+### Installation Steps:
+
+```bash
+# Clone the repository
+git clone https://github.com/DanaDovzh/tiona_test_game.git
+
+# Navigate to the project directory
+cd tiona_test_game
+
+# Install dependencies
+npm install
+```
+
+## Development
+
+### Starting the Development Server:
+
+```bash
+npm start
+```
+
+or
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+After the server starts, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any source files.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Commands
+
+### Development
 
 ```bash
-ng generate component component-name
+npm start        # Start development server (http://localhost:4200)
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### GitHub Pages
 
 ```bash
-ng generate --help
+npm run github-build    # Build for GitHub Pages
+npm run github-deploy   # Deploy to GitHub Pages
 ```
 
 ## Building
 
-To build the project run:
+To build the project, run:
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Tech Stack
 
-## Running unit tests
+- Angular (standalone components)
+- RxJS
+- Angular Material
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## How to Play 🎮
 
-```bash
-ng test
-```
+1. Click the **"Start Game"** button on the main page
+2. Wait for the cells to change color 🟦 -> 🟨
+3. Click on the cell as quickly as possible after the color change
+4. Your result will be recorded in the results table
+5. Results are automatically saved in your browser
+6. The first to reach 10 points wins the game 🏆
+> 💡 **Note:**  
+> You can customize the time interval between cell changes (in milliseconds) using the input field before starting the game.
 
-## Running end-to-end tests
+## 🎮 [Live Demo](https://danadovzh.github.io/tiona_test_game/ "Open the deployed game")
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
