@@ -6,8 +6,8 @@
         <th [ngClass]="(coreSummary$ | async)?.winner === 'player' ? 'winner' : ''">
           Player Score
         </th>
-        <th [ngClass]="(coreSummary$ | async)?.winner === 'cpu' ? 'winner' : ''">
-          CPU Score {{ (coreSummary$ | async)?.winner}}
+        <th [ngClass]="(coreSummary$ | async)?.winner === 'computer' ? 'winner' : ''">
+          Computer Score
         </th>
       </tr>
     </thead>
@@ -15,12 +15,12 @@
       <tr *ngFor="let result of (results$ | async); let i = index">
         <td>{{ i + 1 }}</td>
         <td>{{ result.playerScore }}</td>
-        <td>{{ result.cpuScore }}</td>
+        <td>{{ result.computerScore }}</td>
       </tr>
       <tr class="total-row">
         <td>Total</td>
         <td>{{ (coreSummary$ | async)?.player }}</td>
-        <td>{{ (coreSummary$ | async)?.cpu }}</td>
+        <td>{{ (coreSummary$ | async)?.computer }}</td>
       </tr>
     </tbody>
   </table>

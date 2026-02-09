@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { GameResult, ResultsStorageService } from '../../services/results-storage.service';
 import { map, Observable } from 'rxjs';
+import { GameResult, ResultsStorageService } from '../../services/results-storage.service';
 
-type Winner = 'player' | 'cpu' | 'equal';
+type Winner = 'player' | 'computer' | 'equal';
 @Component({
   selector: 'app-results-table',
   imports: [CommonModule],
@@ -13,7 +13,7 @@ type Winner = 'player' | 'cpu' | 'equal';
 })
 export class ResultsTableComponent implements OnInit {
   results$: Observable<GameResult[]> = new Observable<GameResult[]>();
-  coreSummary$: Observable<{ player: number; cpu: number; winner: Winner }> = new Observable<{ player: number; cpu: number; winner: Winner }>();
+  coreSummary$: Observable<{ player: number; computer: number; winner: Winner }> = new Observable<{ player: number; computer: number; winner: Winner }>();
   constructor(private _resultsStorage: ResultsStorageService) { }
 
   ngOnInit(): void {
@@ -27,20 +27,20 @@ export class ResultsTableComponent implements OnInit {
         const totals = results.reduce(
           (acc, r) => {
             acc.player += r.playerScore;
-            acc.cpu += r.cpuScore;
+            acc.computer += r.computerScore;
             return acc;
           },
-          { player: 0, cpu: 0 }
+          { player: 0, computer: 0 }
         );
 
         return {
           player: totals.player,
-          cpu: totals.cpu,
+          computer: totals.computer,
           winner:
-            totals.player > totals.cpu
+            totals.player > totals.computer
               ? 'player'
-              : totals.cpu > totals.player
-                ? 'cpu'
+              : totals.computer > totals.player
+                ? 'computer'
                 : 'equal'
         };
       })

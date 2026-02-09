@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 const STORAGE_KEY = 'tiona_game_results';
 export interface GameResult {
   playerScore: number;
-  cpuScore: number;
+  computerScore: number;
 }
 @Injectable({ providedIn: 'root' })
 export class ResultsStorageService {

@@ -24,7 +24,7 @@ export class GameCellsComponent {
 
   activeCellIndex: number | undefined;
   score = {
-    cpu: 0,
+    computer: 0,
     player: 0
   };
 
@@ -57,7 +57,7 @@ export class GameCellsComponent {
 
   handleMiss(): void {
     if (this.activeCellIndex === undefined) return;
-    this.score.cpu++;
+    this.score.computer++;
     this.startHighlight();
   }
 
@@ -78,7 +78,7 @@ export class GameCellsComponent {
   }
 
   isFinished() {
-    return this.score.cpu === 10 || this.score.player === 10;
+    return this.score.computer === 10 || this.score.player === 10;
   }
 
   finishGame() {
@@ -88,7 +88,7 @@ export class GameCellsComponent {
 
     this._resultsStorage.saveResult({
       playerScore: this.score.player,
-      cpuScore: this.score.cpu
+      computerScore: this.score.computer
     });
 
     this._dialogRef.close(this.score);
