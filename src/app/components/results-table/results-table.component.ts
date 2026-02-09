@@ -19,7 +19,6 @@ export class ResultsTableComponent implements OnInit {
   ngOnInit(): void {
     this.results$ = this._resultsStorage.results$;
     this.getScore();
-
   }
 
   getScore() {
